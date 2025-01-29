@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio</title>
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+            text-align: center;
+            color: #fff;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 600px;
+            margin: auto;
+            background: rgba(0, 0, 0, 0.5);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+        }
+        h1 {
+            font-size: 2rem;
+        }
+        .buttons {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+        button {
+            background: #ff6b81;
+            color: white;
+            border: none;
+            padding: 10px;
+            font-size: 1.2rem;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: 0.3s;
+        }
+        button:hover {
+            background: #ff4757;
+        }
+        .hidden {
+            display: none;
+        }
+        .modal {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+            width: 300px;
+            text-align: center;
+        }
+        .modal-content {
+            color: black;
+        }
+        .close {
+            float: right;
+            font-size: 20px;
+            cursor: pointer;
+        }
+        .profile-image {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            margin-bottom: 10px;
+        }
+        .project {
+            background: rgba(109, 5, 5, 0.2);
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+        .project:hover {
+            background: rgba(87, 72, 61, 0.5);
+            transform: scale(1.05);
+        }
+        .tech-images img {
+            width: 80px;
+            margin: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Welcome to My Portfolio</h1>
+        <div class="buttons">
+            <button onclick="showAbout()">About Me</button>
+            <button onclick="showProjects()">Projects</button>
+            <button onclick="showTechnologies()">Technologies</button>
+            <button onclick="showContact()">Contact</button>
+        </div>
+        
+        <div id="aboutMe" class="hidden">
+            <h2>About Me</h2>
+            <p>🌟 Hello, World! 🌟
+
+                I’m a passionate  Web-developer Enthusiast who thrives on the thrill of turning ideas into reality through code! I love diving into the intricacies of programming.Here are some of my Projects</p>
+        </div>
+
+        <div id="projects" class="hidden">
+            <h2>Projects</h2>
+            <div class="project" onclick="showTechnologies()">
+                <h3>Eco Journey Guide</h3>
+                <p>Developed an interactive web platform to promote eco-tourism in Kerala by showcasing sustainable travel options
+                    and destinations. The platform emphasizes user engagement through dynamic content and responsive design.</p>
+            </div>
+            <div class="project" onclick="showTechnologies()">
+                <h3>Bus Tracking System|</h3>
+                <p>Designed and developed both embedded software and a web interface, allowing parents to monitor the bus's
+                    status and location in real-time</p>
+            </div>
+            <div class="project">
+                <h3>Student Friendly Mock-Trading Website</h3>
+                <p>The Mock Trading Classroom offers an interactive platform for students to simulate stock trading.</p>
+            </div>
+            <div class="project">
+                <h3>"Blockchain-Based Examination Paper Management System</h3>
+                <p>Designed and implemented a secure and transparent examination platform utilizing Ethereum blockchain
+                    technology and smart contracts.</p>
+                
+            </div>
+        </div>
+
+        <div id="technologies" class="hidden">
+            <h2>Technologies Used</h2>
+            <div class="tech-images">
+                <img src="https://th.bing.com/th/id/OIP.s5TSKci-kxNJLtwefzDEGAHaHa?rs=1&pid=ImgDetMain" alt="CSS">
+                <img src="https://th.bing.com/th/id/OIP.lrMPUKlpBVukVACvbhWD2QHaHZ?rs=1&pid=ImgDetMain" alt="JavaScript">
+                <img src="https://th.bing.com/th/id/OIP.w9AIOO6Cfup6aToV1E-dEQHaIr?rs=1&pid=ImgDetMain" alt="C Programming">
+                <img src="https://assets.leetcode.com/users/Asad_Sarwar/avatar_1719121533.png" alt="LeetCode">
+                <img src="https://th.bing.com/th/id/OIP.jiO-ArGECeJ-3YLK_rL0OwHaHa?rs=1&pid=ImgDetMain" alt="GitHub">
+                <img src="https://th.bing.com/th/id/OIP.vgQ0a5IHzYcirCM570CtfQHaEK?rs=1&pid=ImgDetMain" alt="Arduino IDE">
+            </div>
+        </div>
+
+        <div id="contactModal" class="modal">
+            <div class="modal-content">
+                <span class="close" onclick="closeModal()">&times;</span>
+                <img src="C:\Users\91903\Downloads\pic (2).jpeg" alt="Your Profile Picture" class="profile-image">
+                <h2>Contact Information</h2>
+                <p><strong>GitHub:</strong> <a href="https://github.com/niranjana232003" target="_blank">https://github.com/niranjana232003</a></p>
+                <p><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/niranjanashaji" target="_blank">linkedin.com/in/niranjanashaji</a></p>
+                <p><strong>Email:</strong> shajiniranjana58@gmail.com</p>
+                <p><strong>Phone:</strong> 9037137229</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function showAbout() {
+            hideAll();
+            document.getElementById('aboutMe').style.display = 'block';
+        }
+
+        function showProjects() {
+            hideAll();
+            document.getElementById('projects').style.display = 'block';
+        }
+
+        function showTechnologies() {
+            hideAll();
+            document.getElementById('technologies').style.display = 'block';
+        }
+
+        function showContact() {
+            document.getElementById('contactModal').style.display = 'block';
+        }
+
+        function closeModal() {
+            document.getElementById('contactModal').style.display = 'none';
+        }
+
+        function hideAll() {
+            document.getElementById('aboutMe').style.display = 'none';
+            document.getElementById('projects').style.display = 'none';
+            document.getElementById('technologies').style.display = 'none';
+        }
+    </script>
+</body>
+</html>
